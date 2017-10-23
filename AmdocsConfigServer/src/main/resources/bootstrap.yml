@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: AmdocsMSSuiteConfig
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://localhost:9875/r/AmdocsMSSuite.git
+          username: admin
+          password: admin

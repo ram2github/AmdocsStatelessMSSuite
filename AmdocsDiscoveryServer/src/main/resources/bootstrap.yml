@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: AmdocsDiscoveryService
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+  server:
+    enable-self-preservation: false
+logging:
+  level:
+    com:
+      netflix:
+        eureka: OFF
+        discovery: OFF

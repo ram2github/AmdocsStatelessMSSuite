@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: Billing_Management_MS
+  sleuth:
+    sampler:
+      percentage: 1
+  cloud:
+    config:
+      uri: http://localhost:5000
+      name: AmdocsMSSuiteConfig
+management:
+  security:
+    enabled: false
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${vcap.services.eurekaservice.credentials.uri:http://127.0.0.1:5001/}eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 20

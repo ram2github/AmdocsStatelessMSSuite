@@ -1,0 +1,10 @@
+.recommenders
+.classpath
+.project
+.settings
+.idea
+.metadata
+*.iml
+*.ipr
+RemoteSystemsTempFiles
+Servers
