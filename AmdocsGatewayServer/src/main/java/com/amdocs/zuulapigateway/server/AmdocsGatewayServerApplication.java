@@ -25,7 +25,7 @@ public class AmdocsGatewayServerApplication {
 	    return new LoadbalacingRouteFilter();
 	  }
 
-	private static final Map<String,String> servletPath2ServiceName = new HashMap<String,String>();
+	/*private static final Map<String,String> servletPath2ServiceName = new HashMap<String,String>();
 	
 	@Bean
 	public Map<String,String> serviceNamesForDiscoveryLookup(){
@@ -34,7 +34,8 @@ public class AmdocsGatewayServerApplication {
 		servletPath2ServiceName.put("order", "ORDER_MANAGEMENT_MS");
 		servletPath2ServiceName.put("billing", "BILLING_MANAGEMENT_MS");
 		
+		System.out.println("#################################################### service discovery using Eureka");
 		return servletPath2ServiceName;
-	}
+	}*/
 
 }

@@ -19,12 +19,12 @@ public class LoadbalacingRouteFilter extends ZuulFilter {
 
 	private static Logger log = LoggerFactory.getLogger(LoadbalacingRouteFilter.class);
 
-	@Autowired
+	/*@Autowired
 	private LoadBalancerClient loadBalancer;
 	
 	
 	@Autowired
-	private Map<String,String> serviceNamesForDiscoveryLookup;
+	private Map<String,String> serviceNamesForDiscoveryLookup;*/
 		
 	/*
 	
@@ -46,19 +46,17 @@ public class LoadbalacingRouteFilter extends ZuulFilter {
 		
 	*/
 	
-	@Override
+	
 	public String filterType() {
-		return "route";
+		return "post";
 	}
 
-	@Override
 	public int filterOrder() {
 		return 1;
 	}
 
-	@Override
 	public boolean shouldFilter() {
-		boolean shouldFilterFlag = false;
+		/*boolean shouldFilterFlag = false;
 
 		RequestContext ctx = RequestContext.getCurrentContext();
 		HttpServletRequest request = ctx.getRequest();
@@ -81,11 +79,26 @@ public class LoadbalacingRouteFilter extends ZuulFilter {
 		}
 
 		log.info("shouldFilter returning :" + shouldFilterFlag);
-		return shouldFilterFlag;
+		return shouldFilterFlag;*/
+		
+		return true;
 	}
 
-	@Override
+	
 	public Object run() {
+
+		RequestContext ctx = RequestContext.getCurrentContext();
+		HttpServletRequest request = ctx.getRequest();
+
+		log.info(String.format("post filter run() - %s request to %s was routed to %s", 
+				request.getMethod(),
+				request.getRequestURI(), 
+				ctx.getRouteHost()));
+
+		
+		return null;
+		
+		/*
 		
 		RequestContext ctx = RequestContext.getCurrentContext();
 		HttpServletRequest request = ctx.getRequest();
@@ -111,6 +124,6 @@ public class LoadbalacingRouteFilter extends ZuulFilter {
 			e.printStackTrace();
 		}
 		return null;
-	}
+	*/}
 
 }
